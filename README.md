@@ -8,7 +8,6 @@ Eine öffentlich zugängliche Website um transparenz darüber zu schaffen wie vi
 3. Add the paths to all of your template files in your tailwind.config.js file.
 4. Check if you have a main css file if not create one.
 5. Start the Tailwind CLI build process
-    npx tailwindcss -i ./main.css -o ./output.css --watch
-6. delete old css file and rename new one to main.css
-7. Add your compiled CSS file to the <head> and start using Tailwind’s utility classes to style your content.
+     npx tailwindcss -i ./main.css -o ./mainTailwind.css --watch
+6. Add your compiled CSS file to the <head> and start using Tailwind’s utility classes to style your content.
 
