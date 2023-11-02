@@ -11,21 +11,21 @@ export default function Home() {
           <div className="w-[40vw]">
             <img src="/CO2zoneLogo.png" alt="logo" width="100%" />
           </div>
-          <h1 className="text-blueExtraLight text-4xl animate-pulse m-4  ">
+          <h1 className="flex hyphens-auto text-center text-blueExtraLight text-lg sm:text-4xl animate-pulse m-4  ">
             Advancing Environmental Consciousness, Together!
           </h1>
         </div>
 
-        <div className="justify-center align-center flex items-center w-[100vw]">
-          <section className="mt-4 ">
-            <h2 className="text-4xl align-center flex justify-center p-4  text-blueDark bg-blueExtraLight">
+        <div className="justify-center align-center flex items-center w-[100vw] mt-[3vh]">
+          <section className="mt-4 w-[80vw]">
+            <h2 className="text-lg sm:text-4xl align-center flex justify-center p-3  text-blueDark bg-blueExtraLight">
               CO2-Emissionsübersicht
             </h2>
             <div className="list-group-item mb-0">
-              <table className="table">
+              <table className="bg-blueLight w-[80vw] text-blueExtraDark text-left text-sm sm:text-xl ">
                 <thead>
-                  <tr>
-                    <th>x</th>
+                  <tr className="border border-blueExtraLight border-solid border-1">
+                    <th className="border border-blueExtraLight border-solid border-1">x</th>
                     <th>Land</th>
                     <th>code</th>
                     <th>Jahr0</th>
@@ -33,22 +33,22 @@ export default function Home() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
+                  <tr className="border border-blueExtraLight border-solid border-1">
+                    <td className="border border-blueExtraLight border-solid border-1">1</td>
                     <td>China</td>
                     <td>CHN</td>
                     <td>10.064.147</td>
                     <td>10.064.147</td>
                   </tr>
-                  <tr>
-                    <td>2</td>
+                  <tr className="border border-blueExtraLight border-solid border-1">
+                    <td className="border border-blueExtraLight border-solid border-1">2</td>
                     <td>USA</td>
                     <td>USA</td>
                     <td>5.416.317</td>
                     <td>5.416.317</td>
                   </tr>
-                  <tr>
-                    <td>3</td>
+                  <tr className="border border-blueExtraLight border-solid border-1">
+                    <td className="border border-blueExtraLight border-solid border-1">3</td>
                     <td>Indien</td>
                     <td>IND</td>
                     <td>2.654.400</td>
