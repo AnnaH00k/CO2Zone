@@ -1,0 +1,202 @@
+{
+    "table": [
+      {
+        "country": "United States",
+        "code": "US",
+        "CO2_emissions" : {
+            "2000": 50000,
+            "2001": 60000,
+            "2002": 70000,
+            "2003": 80000,
+            "2004": 90000,
+            "2005": 100000,
+            "2006": 110000,
+            "2007": 120000
+            } 
+      },
+      {
+        "country": "China",
+        "CO2_emissions" : {
+            "1998": 70000,
+            "2003": 80000,
+            "2016": 90000
+            } 
+      },
+      {
+        "country": "India",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Germany",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "United Kingdom",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "ExxonMobil",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Shell",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Chevron",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Saudi Aramco",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "BP",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Russia",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Japan",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "TotalEnergies",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Gazprom",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Canada",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Australia",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "PetroChina",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Petrobras",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Rosneft",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Sinopec",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "South Africa",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Mexico",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "ConocoPhillips",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Reliance Industries",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Eni",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Equinor",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Indonesia",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Brazil",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "ONGC",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Pemex",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "ADNOC",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "PTT",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Argentina",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Nigeria",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "PetroChina",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Sinopec",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Chevron",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "BP",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Kazakhstan",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Norway",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Equinor",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "ConocoPhillips",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Rosneft",
+        "CO2_emissions" : { }
+      },
+      {
+        "company": "Gazprom",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Venezuela",
+        "CO2_emissions" : { }
+      },
+      {
+        "country": "Qatar",
+        "CO2_emissions" : { }
+      }
+    ]
+  }
