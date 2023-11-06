@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [tableData, setTableData] = useState<TableData[]>([]);
+  const [showCompanies, setShowCompanies] = useState<string>("true");
+  
 
   // Ensure that the interface is defined outside the component
   interface TableData {
@@ -38,6 +40,25 @@ const allYears = tableData.reduce((acc, curr) => {
 }, [] as string[]);
 
 
+const handleShowData = (value: string) => {
+  setShowCompanies(value);
+  let filteredData;
+  if (value === "true") {
+    filteredData = jsonData.table.filter((item: any) => item.company);
+  } else if (value === "false") {
+    filteredData = jsonData.table.filter((item: any) => item.country);
+  } else {
+    filteredData = jsonData.table;
+  }
+  const formattedData: TableData[] = filteredData.map((item: any) => ({
+    country: item.country || "",
+    code: item.code || "",
+    CO2_emissions: item.CO2_emissions || {},
+    company: item.company || "",
+  }));
+  setTableData(formattedData);
+};
+
   return (
     <>
       <MenuHeader />
@@ -58,6 +79,35 @@ const allYears = tableData.reduce((acc, curr) => {
             <h2 className="text-lg sm:text-4xl align-center flex justify-center p-3  text-blueDark bg-blueExtraLight">
               CO2-Emission-Overview
             </h2>
+
+            <div className="flex justify-center bg-blueDark border border-blueExtraLight border-solid border-1 items-center">
+              <div>
+                <label className="text-blueExtraLight" htmlFor="showData">Show:</label>
+                <select
+                  className="bg-blueExtraLight border border-blueExtraLight border-solid border-1 rounded-md text-blueDark p-1 m-1"
+                  id="showData"
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (value === "true") {
+                      handleShowData("true");
+                    } else if (value === "false") {
+                      handleShowData("false");
+                    } else {
+                      handleShowData("all");
+                    }
+                  }}
+
+                >
+                  <option value="all">All</option>
+                  <option value="true">Only Companies</option>
+                  <option value="false">Only Countries</option>
+                  
+                </select>
+              </div>
+            </div>
+
+
+
             <div className="list-group-item mb-0" style={{ overflowX: "auto", width: "w-[90vw] sm:w-[80vw]" }}>
               <table className="bg-blueLight w-[90vw] sm:w-[80vw] text-blueExtraDark text-left text-sm sm:text-xl mb-4">
                 <thead>
