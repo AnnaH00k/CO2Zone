@@ -11,7 +11,7 @@ export default function Home() {
           <div className="w-[40vw]">
             <img src="/CO2zoneLogo.png" alt="logo" width="100%" />
           </div>
-          <h1 className="flex hyphens-auto text-center text-blueExtraLight text-lg sm:text-4xl animate-pulse m-4  ">
+          <h1 className="flex hyphens-auto text-center text-blueExtraLight text-lg sm:text-4xl m-4 ">
             Advancing Environmental Consciousness, Together!
           </h1>
         </div>

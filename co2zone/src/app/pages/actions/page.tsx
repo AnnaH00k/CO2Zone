@@ -7,7 +7,7 @@ export default function actionsPage() {
       <MenuHeader />
 
       <div className=" mt-[5vh] flex flex-col justify-center items-center">
-        <h1 className="text-blueExtraLight text-4xl animate-pulse m-4  ">
+        <h1 className="text-blueExtraLight text-4xl m-4  ">
           Actions
         </h1>
       </div>
