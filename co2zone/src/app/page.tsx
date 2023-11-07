@@ -76,6 +76,29 @@ const sortedYears = [...allYears].sort((a, b) => {
   }
 });
 
+
+const handleCO2SortChange = (value: string) => {
+  const sortedData = [...tableData].sort((a, b) => {
+    const aTotalCO2 = parseFloat(calculateTotalCO2Emissions(a.CO2_emissions));
+    const bTotalCO2 = parseFloat(calculateTotalCO2Emissions(b.CO2_emissions));
+    if (value === "lowToHigh") {
+      return aTotalCO2 - bTotalCO2;
+    } else {
+      return bTotalCO2 - aTotalCO2;
+    }
+  });
+  setTableData(sortedData);
+};
+
+
+const calculateTotalCO2Emissions = (CO2Data: { [key: string]: number }) => {
+  let totalCO2 = 0;
+  Object.values(CO2Data).forEach((value) => {
+    totalCO2 += value;
+  });
+  return totalCO2.toFixed(2); // Round to 2 decimal places
+};
+
   return (
     <>
       <MenuHeader />
@@ -123,16 +146,29 @@ const sortedYears = [...allYears].sort((a, b) => {
               </div>
 
               <div>
-          <label className="text-blueExtraLight" htmlFor="sortData">Sort:</label>
-          <select
-            className="bg-blueExtraLight border border-blueExtraLight border-solid border-1 rounded-md text-blueDark p-1 m-1"
-            id="sortData"
-            onChange={(e) => handleSortChange(e.target.value)}
-          >
-            <option value="oldToNew">Old to New</option>
-            <option value="newToOld">New to Old</option>
-          </select>
-        </div>
+                <label className="text-blueExtraLight" htmlFor="sortData">Sort:</label>
+                <select
+                  className="bg-blueExtraLight border border-blueExtraLight border-solid border-1 rounded-md text-blueDark p-1 m-1"
+                  id="sortData"
+                  onChange={(e) => handleSortChange(e.target.value)}
+                >
+                  <option value="oldToNew">Old to New</option>
+                  <option value="newToOld">New to Old</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="text-blueExtraLight" htmlFor="sortCO2">CO2 Emissions:</label>
+                <select
+                  className="bg-blueExtraLight border border-blueExtraLight border-solid border-1 rounded-md text-blueDark p-1 m-1"
+                  id="sortCO2"
+                  onChange={(e) => handleCO2SortChange(e.target.value)}
+                >
+                  <option value="">Unsorted</option>
+                  <option value="lowToHigh">Low to High</option>
+                  <option value="highToLow">High to Low</option>
+                </select>
+              </div>
 
             </div>
 
@@ -145,16 +181,34 @@ const sortedYears = [...allYears].sort((a, b) => {
                     <th className="border border-blueExtraLight border-solid border-1">x</th>
                     <th className="border border-blueExtraLight border-solid border-1">Land & company</th>
                     <th className="border border-blueExtraLight border-solid border-1">code</th>
-                  
+
                      {sortedYears.map((year) => (
                         <th key={year} className="border border-blueExtraLight border-solid border-1">
                           {year}
                         </th>
                       ))}
+                    <th className="border border-blueExtraLight border-solid border-1">Total</th>
 
                   </tr>
                 </thead>
                 <tbody>
+
+                {tableData.map((item: TableData, index: number) => (
+                    <tr key={index} className="border border-blueExtraLight border-solid border-1">
+                      <td className="border border-blueExtraLight border-solid border-1">{index + 1}</td>
+                      <td className="border border-blueExtraLight border-solid border-1">{item.country || item.company}</td>
+                      <td className="border border-blueExtraLight border-solid border-1">{item.code || "-"}</td>
+                      {sortedYears.map((year) => (
+                        <td key={year} className="border border-blueExtraLight border-solid border-1">
+                          {item.CO2_emissions[year] || "-"}
+                        </td>
+                      ))}
+                      <td className="border border-blueExtraLight border-solid border-1">
+                        {calculateTotalCO2Emissions(item.CO2_emissions)}
+                      </td>
+                    </tr>
+                  ))}
+
                   {/* Loop through the tableData to create rows */}
                   {tableData.map((item: TableData, index: number) => (
                     <tr key={index} className="border border-blueExtraLight border-solid border-1">

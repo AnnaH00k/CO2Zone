@@ -743,31 +743,31 @@
       {
         "company": "Vistra Energy",
         "CO2_emissions" : { 
-          "2020": 95036473
+          "2020": 95.036473
         }
       },
       {
         "company": "Duke Energy",
         "CO2_emissions" : {
-          "2020": 76661234	
+          "2020": 76.661234	
          }
       },
       {
         "company": "Southern Company",
         "CO2_emissions" : {
-          "2020": 75880072		
+          "2020": 75.880072		
          }
       },
       {
         "company": "Berkshire Hathaway",
         "CO2_emissions" : {
-          "2020": 67213495	
+          "2020": 67.213495	
          }
       },
       {
         "company": "American Electric Power",
         "CO2_emissions" : {
-          "2020": 52990661	
+          "2020": 52.990661	
          }
       },
       {
