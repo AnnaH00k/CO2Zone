@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [tableData, setTableData] = useState<TableData[]>([]);
   const [showCompanies, setShowCompanies] = useState<string>("true");
-  
+  const [sortOrder, setSortOrder] = useState<"oldToNew" | "newToOld">("oldToNew"); // Track the sorting order
+
 
   // Ensure that the interface is defined outside the component
   interface TableData {
@@ -59,6 +60,22 @@ const handleShowData = (value: string) => {
   setTableData(formattedData);
 };
 
+
+const handleSortChange = (value: string) => {
+  if (value === "oldToNew" || value === "newToOld") {
+    setSortOrder(value as "oldToNew" | "newToOld");
+  }
+};
+
+// Implement sorting based on the selected sorting order
+const sortedYears = [...allYears].sort((a, b) => {
+  if (sortOrder === "oldToNew") {
+    return parseInt(a) - parseInt(b);
+  } else {
+    return parseInt(b) - parseInt(a);
+  }
+});
+
   return (
     <>
       <MenuHeader />
@@ -77,7 +94,7 @@ const handleShowData = (value: string) => {
         <div className="justify-center align-center flex items-center w-[100vw] mt-[3vh]">
           <section className="mt-4 w-[90vw] sm:w-[80vw]">
             <h2 className="text-lg sm:text-4xl align-center flex justify-center p-3  text-blueDark bg-blueExtraLight">
-              CO2-Emission-Overview
+              CO2-Emission-Overview (Unit:MtCO2e)
             </h2>
 
             <div className="flex justify-center bg-blueDark border border-blueExtraLight border-solid border-1 items-center">
@@ -104,6 +121,19 @@ const handleShowData = (value: string) => {
                   
                 </select>
               </div>
+
+              <div>
+          <label className="text-blueExtraLight" htmlFor="sortData">Sort:</label>
+          <select
+            className="bg-blueExtraLight border border-blueExtraLight border-solid border-1 rounded-md text-blueDark p-1 m-1"
+            id="sortData"
+            onChange={(e) => handleSortChange(e.target.value)}
+          >
+            <option value="oldToNew">Old to New</option>
+            <option value="newToOld">New to Old</option>
+          </select>
+        </div>
+
             </div>
 
 
@@ -115,11 +145,13 @@ const handleShowData = (value: string) => {
                     <th className="border border-blueExtraLight border-solid border-1">x</th>
                     <th className="border border-blueExtraLight border-solid border-1">Land & company</th>
                     <th className="border border-blueExtraLight border-solid border-1">code</th>
-                    {allYears.map((year) => (
-                      <th key={year} className="border border-blueExtraLight border-solid border-1">
-                        {year}
-                      </th>
-                    ))}
+                  
+                     {sortedYears.map((year) => (
+                        <th key={year} className="border border-blueExtraLight border-solid border-1">
+                          {year}
+                        </th>
+                      ))}
+
                   </tr>
                 </thead>
                 <tbody>
@@ -129,7 +161,7 @@ const handleShowData = (value: string) => {
                       <td className="border border-blueExtraLight border-solid border-1">{index + 1}</td>
                       <td className="border border-blueExtraLight border-solid border-1">{item.country || item.company}</td>
                       <td className="border border-blueExtraLight border-solid border-1">{item.code || "-"}</td>
-                      {allYears.map((year) => (
+                      {sortedYears.map((year) => (
                         <td key={year} className="border border-blueExtraLight border-solid border-1">
                           {item.CO2_emissions[year] || "-"}
                         </td>
