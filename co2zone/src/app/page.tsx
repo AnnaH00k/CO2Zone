@@ -77,7 +77,7 @@ export default function Home() {
     });
     setTableData(filteredData);
   };
-  
+
   const allYears = tableData.reduce((acc, curr) => {
     const years = Object.keys(curr.CO2_emissions);
     years.forEach((year) => {
@@ -142,9 +142,9 @@ export default function Home() {
     return totalCO2.toFixed(2);
   };
 
-  const filteredYears = sortedYears.filter((year) => selectedYears.includes(year));
-
-
+  const filteredYears = sortedYears.filter((year) =>
+    selectedYears.includes(year)
+  );
 
   return (
     <>
@@ -237,33 +237,36 @@ export default function Home() {
                     <th className="border border-blueExtraLight border-solid border-1">
                       Country & Company
                     </th>
-                    {favoritesClicked && selectedCountries.length > 0 || selectedCompanies.length > 0 ? (
-                      filteredYears.map((year) => (
-                        <th
-                          key={year}
-                          className={`border border-blueExtraLight border-solid border-1 ${
-                            selectedYears.includes(year) ? "bg-blueDark text-blueExtraLight" : ""
-                          }`}
-                          onClick={() => handleYearClick(year)}
-                          style={{ cursor: "pointer" }}
-                        >
-                          {year}
-                        </th>
-                      ))
-                    ) : (
-                      sortedYears.map((year) => (
-                        <th
-                          key={year}
-                          className={`border border-blueExtraLight border-solid border-1 ${
-                            selectedYears.includes(year) ? "bg-blueDark text-blueExtraLight" : ""
-                          }`}
-                          onClick={() => handleYearClick(year)}
-                          style={{ cursor: "pointer" }}
-                        >
-                          {year}
-                        </th>
-                      ))
-                    )}
+                    {(favoritesClicked && selectedCountries.length > 0) ||
+                    selectedCompanies.length > 0
+                      ? filteredYears.map((year) => (
+                          <th
+                            key={year}
+                            className={`border border-blueExtraLight border-solid border-1 ${
+                              selectedYears.includes(year)
+                                ? "bg-blueDark text-blueExtraLight"
+                                : ""
+                            }`}
+                            onClick={() => handleYearClick(year)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            {year}
+                          </th>
+                        ))
+                      : sortedYears.map((year) => (
+                          <th
+                            key={year}
+                            className={`border border-blueExtraLight border-solid border-1 ${
+                              selectedYears.includes(year)
+                                ? "bg-blueDark text-blueExtraLight"
+                                : ""
+                            }`}
+                            onClick={() => handleYearClick(year)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            {year}
+                          </th>
+                        ))}
                     <th className="border border-blueExtraLight border-solid border-1">
                       Total
                     </th>
@@ -297,13 +300,14 @@ export default function Home() {
                         {item.country || item.company}
                       </td>
 
-                    
-                      {favoritesClicked 
+                      {favoritesClicked
                         ? filteredYears.map((year) => (
                             <td
                               key={year}
                               className={`border border-blueExtraLight border-solid border-1 ${
-                                selectedYears.includes(year) ? "bg-blueDark text-blueExtraLight" : ""
+                                selectedYears.includes(year)
+                                  ? "bg-blueDark text-blueExtraLight"
+                                  : ""
                               }`}
                               onClick={() => handleYearClick(year)}
                               style={{ cursor: "pointer" }}
@@ -315,7 +319,9 @@ export default function Home() {
                             <td
                               key={year}
                               className={`border border-blueExtraLight border-solid border-1 ${
-                                selectedYears.includes(year) ? "bg-blueDark text-blueExtraLight" : ""
+                                selectedYears.includes(year)
+                                  ? "bg-blueDark text-blueExtraLight"
+                                  : ""
                               }`}
                               onClick={() => handleYearClick(year)}
                               style={{ cursor: "pointer" }}
