@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import MenuHeader from "./components/menuHeader";
 import jsonData from "./Data/table.json";
+import Footer from "./components/footer";
 
 interface TableData {
   code?: string;
@@ -339,6 +340,7 @@ export default function Home() {
             </div>
           </section>
         </div>
+      <Footer/>
       </main>
     </>
   );
