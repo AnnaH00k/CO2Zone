@@ -298,7 +298,7 @@ export default function Home() {
                       </td>
 
                     
-                      {favoritesClicked && selectedCountries.length > 0 || selectedCompanies.length > 0
+                      {favoritesClicked 
                         ? filteredYears.map((year) => (
                             <td
                               key={year}
