@@ -771,92 +771,16 @@
          }
       },
       {
-        "company": "TotalEnergies",
-        "CO2_emissions" : { }
+        "company": "Energy Capital Partners",
+        "CO2_emissions" : { 
+          "2020": 45.889180		
+        }
       },
       {
-        "company": "Gazprom",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "PetroChina",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Petrobras",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Rosneft",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Sinopec",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "ConocoPhillips",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Reliance Industries",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Eni",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Equinor",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "ONGC",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Pemex",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "ADNOC",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "PTT",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "PetroChina",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Sinopec",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Chevron",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "BP",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Equinor",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "ConocoPhillips",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Rosneft",
-        "CO2_emissions" : { }
-      },
-      {
-        "company": "Gazprom",
-        "CO2_emissions" : { }
+        "company": "NextEra Energy",
+        "CO2_emissions" : { 
+          "2020": 39.783748		
+        }
       }
     ]
   }
