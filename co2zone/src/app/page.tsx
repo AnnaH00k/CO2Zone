@@ -238,8 +238,7 @@ export default function Home() {
                     <th className="border border-blueExtraLight border-solid border-1">
                       Country & Company
                     </th>
-                    {(favoritesClicked && selectedCountries.length > 0) ||
-                    selectedCompanies.length > 0
+                    {favoritesClicked
                       ? filteredYears.map((year) => (
                           <th
                             key={year}
@@ -339,7 +338,20 @@ export default function Home() {
               </table>
             </div>
           </section>
+
+
+
+         
         </div>
+        <h1 className="text-blueExtraLight text-3xl text-center mt-5">Get a feel for the measuring Unit</h1>
+        <ul className="text-blueLight text-xl text-left m-6 ">
+          <li>
+          - According to the United States Environmental Protection Agency (EPA), the average passenger vehicle emits about 4.6 metric tons of carbon dioxide equivalent per year. Therefore, 1 MtCO2e is roughly equivalent to the annual emissions of approximately 217 passenger cars.
+          </li>
+          <li>
+
+          </li>
+        </ul>
       <Footer/>
       </main>
     </>
