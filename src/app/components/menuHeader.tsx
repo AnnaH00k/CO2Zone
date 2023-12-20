@@ -27,6 +27,18 @@ export default function MenuHeader() {
         };
     }, []);
 
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setMenu2Open(false);
+            setMenu3Open(false);
+            setMenu4Open(false);
+        }, 10000);
+
+        return () => clearTimeout(timer);
+    }, [menu2open, menu3open, menu4open]);
+
+
     return (
         <header>
             <nav >
