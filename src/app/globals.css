@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --bg:#1E2A52;
+  --blueExtraLight: #D7D8EF;
+  --blueLight: #7C7EAE;
+  --blueDark: #41426C;
+  --blueExtraDark: #111F43;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: var(--bg);
+}
+a:hover {
+  color: var(--blueLight);
+  text-shadow: #D7D8EF;
+  transition: 0.2s;
+}
+::placeholder {
+  color: var(--blueLight);
+  opacity: 1;
+  /* Firefox */
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+

@@ -1,0 +1,92 @@
+
+
+:root{
+  --bg:#1E2A52;
+  --blueExtraLight: #D7D8EF;
+  --blueLight: #7C7EAE;
+  --blueDark: #41426C;
+  --blueExtraDark: #111F43;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+
+body {
+  background-color: var(--bg);
+}
+
+a:hover {
+  color: var(--blueLight);
+  text-shadow: #D7D8EF;
+  transition: 0.2s;
+}
+
+a {
+  color: var(--blueExtraLight);
+  text-decoration: none;
+  font-size: large;
+  width: auto;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+#menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: auto;
+  height:auto;
+  position: fixed;
+  background-color: var(--blueExtraDark);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 40px;
+  border-color: var(--blueDark);
+  border-style:solid;
+  border-width: 1px;
+  margin: 1vh;
+  color: var(--blueExtraLight);
+  font-size: large;
+  z-index: 1;
+}
+
+input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: auto;
+  height:auto;
+  position: fixed;
+  background-color: var(--blueExtraDark);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  border-radius: 40px;
+  border-color: var(--blueDark);
+  border-width: 1px;
+  border-style:solid;
+  margin: 1vh;
+  z-index: 1;
+  color: var(--blueExtraLight);
+  font-size: large;
+}
+
+::placeholder {
+  color: var(--blueLight);
+  opacity: 1;
+  /* Firefox */
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
