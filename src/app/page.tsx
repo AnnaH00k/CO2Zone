@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import MenuHeader from "./components/menuHeader";
 import jsonData from "./Data/table.json";
 import Footer from "./components/footer";
+import { ArrowArcLeft } from "@phosphor-icons/react/dist/ssr";
+import { ArrowArcRight } from "@phosphor-icons/react";
 
 interface TableData {
   code?: string;
@@ -21,6 +23,9 @@ export default function Home() {
   const [selectedCompanies, setSelectedCompanies] = useState<string[]>([]);
   const [selectedYears, setSelectedYears] = useState<string[]>([]);
   const [favoritesClicked, setFavoritesClicked] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  
+
 
   useEffect(() => {
     const formattedData: TableData[] = jsonData.table.map((item: any) => ({
@@ -37,6 +42,32 @@ export default function Home() {
       setSelectedYears(selectedYears.filter((y) => y !== year));
     } else {
       setSelectedYears([...selectedYears, year]);
+    }
+  };
+
+  // Function to handle scrolling to the left
+  const scrollLeft = () => {
+    const container = document.getElementById("tableContainer");
+    if (container) {
+      const newPosition = scrollPosition - 200; // Adjust as needed
+      container.scrollLeft = newPosition;
+      setScrollPosition(newPosition);
+    }
+    if (scrollPosition <= 0) {
+      setScrollPosition(0);
+    }
+  };
+
+  // Function to handle scrolling to the right
+  const scrollRight = () => {
+    const container = document.getElementById("tableContainer");
+    if (container) {
+      const newPosition = scrollPosition + 200; // Adjust as needed
+      container.scrollLeft = newPosition;
+      setScrollPosition(newPosition);
+    }
+    if (scrollPosition >= 2200) {
+      setScrollPosition(2200);
     }
   };
 
@@ -167,7 +198,8 @@ export default function Home() {
               CO2-Emission-Overview (Unit:MtCO2e)
             </h2>
 
-            <div className="flex justify-center bg-blueDark border border-blueExtraLight border-solid border-1 items-center">
+
+            <div className="flex sm:flex-row flex-col justify-center bg-blueDark border border-blueExtraLight border-solid border-1 items-center">
               <div>
                 <label className="text-blueExtraLight" htmlFor="showData">
                   Show:
@@ -225,10 +257,29 @@ export default function Home() {
               </div>
             </div>
 
+              {/* Add buttons for scrolling */}
+              <div className="flex bg-blueExtraLight justify-center justify-between  ">
+                <button className={`flex rounded-full justify-center items-center border border-blueExtraDark p-1 m-1 gap-1 text-xs sm:text-lg ${scrollPosition <= 0 ? "bg-grey text-blueLight border-blueLight block" : "bg-blueLight"}`} onClick={scrollLeft}>  <ArrowArcLeft size={24}/>Scroll Left</button>
+                <button className={`flex rounded-full justify-center items-center border border-blueExtraDark p-1 m-1 gap-1 text-xs sm:text-lg ${scrollPosition >= 2200 ? "bg-grey text-blueLight border-blueLight block" : "bg-blueLight"}`} onClick={scrollRight}> Scroll Right <ArrowArcRight size={24}/></button>
+              </div>
+
             <div
               className="list-group-item mb-0"
-              style={{ overflowX: "auto", width: "w-[90vw] sm:w-[80vw]" }}
+              id="tableContainer"
+              style={{
+                overflowX: "auto",
+                width: "w-[90vw] sm:w-[80vw]",
+                scrollbarColor: "blueExtraLight blueDark",
+                scrollBehavior: "smooth", 
+                scrollbarWidth: "thin",
+                position: "relative",
+
+              }}
+             
             >
+
+            
+
               <table className="bg-blueLight w-[90vw] sm:w-[80vw] text-blueExtraDark text-left text-sm sm:text-xl mb-4">
                 <thead>
                   <tr className="border border-blueExtraLight border-solid border-1">
@@ -338,11 +389,12 @@ export default function Home() {
               </table>
             </div>
           </section>
+        </div>
 
 
 
          
-        </div>
+      
         <h1 className="text-blueExtraLight text-3xl text-center mt-5">Get a feel for the measuring Unit</h1>
         <ul className="text-blueLight text-xl text-left m-6 ">
           <li>

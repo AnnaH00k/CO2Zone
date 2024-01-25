@@ -3,6 +3,7 @@ import React , { useEffect, useRef, useState } from 'react';
 import Menu2 from "./menu2";
 import Menu3 from "./menu3";
 import Menu4 from "./menu4";
+import { MagnifyingGlass } from "@phosphor-icons/react";
 
 
 
@@ -77,9 +78,11 @@ export default function MenuHeader() {
                     </div>
 
                 <div id="menuSearch">
-                    <form >
-                        <input className='flex flex-row items-center sm:fixed top-0 right-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] pt-[1vh] pb-[1vh] rounded-3xl border border-blueDark border-1 m-[1vh] text-blueExtraLight text-sm md:text-lg sm:text-md z-10' type="search" name="suche" placeholder="Search" />
+                    <form className='flex flex-row items-center sm:fixed top-0 right-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] pt-[1vh] pb-[1vh] rounded-3xl border border-blueDark border-1 m-[1vh] text-blueExtraLight text-sm md:text-lg sm:text-md z-10' >
+                        <input className='bg-blueExtraDark ' type="search" name="suche" placeholder="Search" />
+                        <button className='' type="submit" title="Search"><MagnifyingGlass size={25} /></button>
                     </form>
+                    
                 </div>
                 </div>
             </nav>
