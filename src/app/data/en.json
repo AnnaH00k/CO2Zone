@@ -1,0 +1,51 @@
+{
+    "menuHeader":{
+        "1":"Overview",
+        "2":"CO2 Infos",
+        "3":"Actions",
+        "4":"Interesting"
+    },
+    "menu2":{
+        "WhatIsCo2":"What is CO2?",
+        "WhatDoesCo2Do":"What does CO2 do?",
+        "HowIsItMonitored": "How is it monitored?",
+        "CurrentResearch":"Current research on CO2 Emissions",
+        "OtherInfluences":"What else influences our Environment ?",
+        "CO2Equivalents":"CO2 Equivalents"
+    },
+    "menu3":{
+        "ActionIndividuals":"What can Individuals do?",
+        "ActionCompanies":"What can Companies do?",
+        "ActionGovernments":"What can governments do?"
+    },
+    "menu4":{
+        "CooperationOnClimateChange": "Global Cooperation on Climate Change",
+        "EmissionTradingSchemes":"Emission Trading Schemes",
+        "Geoengineering":"Geoengineering solutions?",
+        "ClimateChangeDenial":"Climate Change Denial"
+    },
+    "footer":{
+        "datasecurity":"Datasecurity",
+        "impressum":"Impressum",
+        "contact":"Contact"
+    },
+    "actions":{
+
+    },
+    "co2Info":{
+
+    },
+    "interesting":{
+
+    },
+    "contact":{
+
+    },
+    "datasecurity":{
+
+    },
+    "impressum":{
+
+    }
+
+}
