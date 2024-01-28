@@ -12,9 +12,9 @@ export default function actionsPage() {
 
         </h1>
 
+        <div  id="ActionIndividuals" className="h-[5vh]"/>
 
         <div
-          id="ActionIndividuals"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
@@ -33,9 +33,9 @@ export default function actionsPage() {
           </div>
         </div>
 
+        <div  id="ActionCompanies" className="h-[5vh]"/>
 
         <div
-          id="ActionCompanies"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
@@ -55,9 +55,9 @@ export default function actionsPage() {
         </div>
 
 
-      
+        <div  id="ActionGovernments" className="h-[5vh]"/>
+
         <div
-          id="ActionGovernments"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">

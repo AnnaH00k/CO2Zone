@@ -12,9 +12,9 @@ export default function interestingPage() {
 
 
 
+        <div  id="CooperationOnClimateChange" className="h-[5vh]"/>
 
         <div
-          id="CooperationOnClimateChange"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
@@ -33,10 +33,10 @@ export default function interestingPage() {
 
 
 
+        <div  id="EmissionTradingSchemes" className="h-[5vh]"/>
 
 
         <div
-          id="EmissionTradingSchemes"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
@@ -54,10 +54,10 @@ export default function interestingPage() {
 
 
 
+        <div  id="Geoengineering" className="h-[5vh]"/>
 
 
         <div
-          id="Geoengineering"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
@@ -73,9 +73,8 @@ export default function interestingPage() {
           </div>
         </div>
 
-       
+        <div  id="ClimateChangeDenial" className="h-[5vh]"/>
         <div
-          id="ClimateChangeDenial"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">

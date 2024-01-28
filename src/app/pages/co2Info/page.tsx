@@ -6,13 +6,13 @@ export default function co2InfoPage() {
     <main>
       <MenuHeader />
 
-      <div className=" mt-[5vh] flex flex-col justify-center items-center">
+      <div id="WhatIsCo2" className=" mt-[5vh] flex flex-col justify-center items-center">
         <h1 className="text-blueExtraLight text-center text-4xl  m-4  ">
           Understanding CO2: Its Impact and Monitoring
         </h1>
 
         <div
-          id="WhatIsCo2"
+          
           className="flex flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-2xl mb-4 font-bold">
@@ -45,9 +45,8 @@ export default function co2InfoPage() {
             </div>
           </div>
         </div>
-
+        <div  id="WhatDoesCo2Do"className="h-[5vh]"/>
         <div
-          id="WhatDoesCo2Do"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
@@ -88,7 +87,7 @@ export default function co2InfoPage() {
                     </div>
 
                     <img
-                      className="rounded-xl w-full sm:w-[30%] h-auto mt-2 mb-4 sm:m-4"
+                      className="rounded-xl w-full sm:w-[30%] h-auto mt-2 mb-4 sm:m-4 object-contain"
                       src="/photosynthesis.png"
                       alt="photosynthesis"
                     />
@@ -112,7 +111,7 @@ export default function co2InfoPage() {
                     </div>
 
                     <img
-                      className="rounded-xl w-full sm:w-[30%] h-auto mt-2 mb-4 sm:m-4"
+                      className="rounded-xl object-contain w-full sm:w-[30%] h-auto mt-2 mb-4 sm:m-4"
                       src="/carbonation.png"
                       alt="carbonation"
                     />
@@ -140,9 +139,9 @@ export default function co2InfoPage() {
             </div>
           </div>
         </div>
+        <div id="HowIsItMonitored" className="h-[5vh]"/>
 
         <div
-          id="HowIsItMonitored"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
@@ -269,8 +268,10 @@ export default function co2InfoPage() {
           </div>
         </div>
 
+
+        <div id="CurrentResearch" className="h-[5vh]"/>
+
         <div
-          id="CurrentResearch"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
@@ -296,8 +297,9 @@ export default function co2InfoPage() {
           </div>
         </div>
 
+
+        <div id="OtherInfluences" className="h-[5vh]"/>
         <div
-          id="OtherInfluences"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
@@ -324,8 +326,9 @@ export default function co2InfoPage() {
           </div>
         </div>
 
+
+        <div id="CO2Equivalents" className="h-[5vh]"/>
         <div
-          id="CO2Equivalents"
           className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
         >
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
