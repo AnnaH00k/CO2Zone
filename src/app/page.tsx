@@ -273,6 +273,7 @@ export default function Home() {
                 scrollBehavior: "smooth", 
                 scrollbarWidth: "thin",
                 position: "relative",
+                zIndex: 1,
 
               }}
              

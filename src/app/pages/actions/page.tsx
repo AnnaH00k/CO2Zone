@@ -27,7 +27,7 @@ export default function actionsPage() {
                 Individual actions play a crucial role in mitigating the impact of climate change. Simple yet impactful steps include reducing energy consumption at home, opting for renewable energy sources, practicing sustainable transportation, such as biking or using public transport, minimizing water waste, and adopting eco-friendly habits like recycling and reducing single-use plastics. Additionally, individuals can advocate for environmental awareness and support initiatives that promote sustainability within their communities, fostering a culture of eco-consciousness and responsible consumption.
                 </li>
                 <li className="mb-4">
-                On this website could be a calculator whwere individuals can properly calculate their own co2 emissions, gather points for planting or acting in a certain way, to reduce co2 emissions, kind of like a daily co2 emission tracker.  Let individuals set up their own co2 tracker for real time co2 emission data from their homes.              </li>
+                On this website could be a calculator where individuals can properly calculate their own co2 emissions, gather points for planting or acting in a certain way, to reduce co2 emissions, kind of like a daily co2 emission tracker.  Let individuals set up their own co2 tracker for real time co2 emission data from their homes.              </li>
               </ul>
             </div>
           </div>
