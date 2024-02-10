@@ -6,15 +6,15 @@ export default function co2InfoPage() {
     <main>
       <MenuHeader />
 
-      <div id="WhatIsCo2" className=" mt-[5vh] flex flex-col justify-center items-center">
+      <div
+        id="WhatIsCo2"
+        className=" mt-[5vh] flex flex-col justify-center items-center"
+      >
         <h1 className="text-blueExtraLight text-center text-4xl  m-4  ">
           Understanding CO2: Its Impact and Monitoring
         </h1>
 
-        <div
-          
-          className="flex flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
-        >
+        <div className="flex flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-2xl mb-4 font-bold">
             What is CO2?
           </h1>
@@ -45,10 +45,8 @@ export default function co2InfoPage() {
             </div>
           </div>
         </div>
-        <div  id="WhatDoesCo2Do"className="h-[5vh]"/>
-        <div
-          className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
-        >
+        <div id="WhatDoesCo2Do" className="h-[5vh]" />
+        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
             What does CO2 do?
           </h1>
@@ -139,11 +137,9 @@ export default function co2InfoPage() {
             </div>
           </div>
         </div>
-        <div id="HowIsItMonitored" className="h-[5vh]"/>
+        <div id="HowIsItMonitored" className="h-[5vh]" />
 
-        <div
-          className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
-        >
+        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
             How is it monitored?
           </h1>
@@ -268,12 +264,9 @@ export default function co2InfoPage() {
           </div>
         </div>
 
+        <div id="CurrentResearch" className="h-[5vh]" />
 
-        <div id="CurrentResearch" className="h-[5vh]"/>
-
-        <div
-          className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
-        >
+        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
             Current research on CO2 Emissions
           </h1>
@@ -297,11 +290,8 @@ export default function co2InfoPage() {
           </div>
         </div>
 
-
-        <div id="OtherInfluences" className="h-[5vh]"/>
-        <div
-          className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
-        >
+        <div id="OtherInfluences" className="h-[5vh]" />
+        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
             What else influences our Environment ?
           </h1>
@@ -326,11 +316,8 @@ export default function co2InfoPage() {
           </div>
         </div>
 
-
-        <div id="CO2Equivalents" className="h-[5vh]"/>
-        <div
-          className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg"
-        >
+        <div id="CO2Equivalents" className="h-[5vh]" />
+        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
             CO2 Equivalents
           </h1>
