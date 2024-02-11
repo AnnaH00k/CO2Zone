@@ -7,6 +7,8 @@ import { GetStaticProps } from 'next';
 import { useTranslation } from 'react-i18next';
 import { ArrowArcLeft } from "@phosphor-icons/react/dist/ssr";
 import { ArrowArcRight } from "@phosphor-icons/react";
+import TranslationsProvider from "../components/TranslationsProvider";
+import initTranslations from "../i18n";
 
 
 const ClientComponent = () => {
@@ -19,7 +21,8 @@ interface TableData {
   company?: string;
 }
 
-  const { t } = useTranslation();
+  const { t } = useTranslation("");
+  
   const [tableData, setTableData] = useState<TableData[]>([]);
   const [showCompanies, setShowCompanies] = useState<string>("true");
   const [sortOrder, setSortOrder] = useState<"oldToNew" | "newToOld">(
@@ -188,13 +191,13 @@ interface TableData {
     <div className="justify-center align-center flex items-center w-[100vw] mt-[3vh]">
           <section className="mt-4 w-[90vw] sm:w-[80vw]">
             <h2 className="text-lg sm:text-4xl align-center flex justify-center p-3 text-center text-blueDark bg-blueExtraLight">
-              CO2-Emission-Overview (Unit:MtCO2e)
+              {t("tableHeadline")}
             </h2>
 
             <div className="flex sm:flex-row flex-col justify-center bg-blueDark border border-blueExtraLight border-solid border-1 items-center">
               <div>
                 <label className="text-blueExtraLight" htmlFor="showData">
-                  Show:
+                  {t("show")}
                 </label>
                 <select
                   className="bg-blueExtraLight border border-blueExtraLight border-solid border-1 rounded-md text-blueDark p-1 m-1"
@@ -210,42 +213,42 @@ interface TableData {
                     }
                   }}
                 >
-                  <option value="all">All</option>
-                  <option value="true">Only Companies</option>
-                  <option value="false">Only Countries</option>
+                  <option value="all">{t("all")}</option>
+                  <option value="true">{t("onlyCompanies")} </option>
+                  <option value="false">{t("onlyCountries")}</option>
                 </select>
               </div>
 
               <div>
                 <label className="text-blueExtraLight" htmlFor="sortData">
-                  Sort:
+                  {t("sort")}
                 </label>
                 <select
                   className="bg-blueExtraLight border border-blueExtraLight border-solid border-1 rounded-md text-blueDark p-1 m-1"
                   id="sortData"
                   onChange={(e) => handleSortChange(e.target.value)}
                 >
-                  <option value="oldToNew">Old to New</option>
-                  <option value="newToOld">New to Old</option>
+                  <option value="oldToNew">{t("oldToNew")}</option>
+                  <option value="newToOld">{t("newToOld")}</option>
                 </select>
               </div>
 
               <div>
                 <label className="text-blueExtraLight" htmlFor="sortCO2">
-                  CO2 Emissions:
+                  {t("co2Emissions")}
                 </label>
                 <select
                   className="bg-blueExtraLight border border-blueExtraLight border-solid border-1 rounded-md text-blueDark p-1 m-1"
                   id="sortCO2"
                   onChange={(e) => handleCO2SortChange(e.target.value)}
                 >
-                  <option value="">Unsorted</option>
-                  <option value="lowToHigh">Low to High</option>
-                  <option value="highToLow">High to Low</option>
+                  <option value="">{t("unsorted")}</option>
+                  <option value="lowToHigh">{t("lowHigh")}</option>
+                  <option value="highToLow">{t("highLow")}</option>
                 </select>
               </div>
               <div className="bg-blueExtraLight border border-blueExtraLight border-solid border-1 rounded-md text-blueDark p-1 m-1">
-                <button onClick={handleFavorites}> Set Favorites</button>
+                <button onClick={handleFavorites}> {t("setFavorites")}</button>
               </div>
             </div>
 
@@ -261,7 +264,7 @@ interface TableData {
               >
                 {" "}
                 <ArrowArcLeft size={24} />
-                Scroll Left
+                {t("scrollLeft")}
               </button>
               <button
                 className={`flex rounded-full justify-center items-center border border-blueExtraDark p-1 m-1 gap-1 text-xs sm:text-lg ${
@@ -272,7 +275,7 @@ interface TableData {
                 onClick={scrollRight}
                 >
                 {" "}
-                Scroll Right <ArrowArcRight size={24} />
+                {t("scrollRight")} <ArrowArcRight size={24} />
               </button>
             </div>
 
@@ -293,10 +296,10 @@ interface TableData {
                 <thead>
                   <tr className="border border-blueExtraLight border-solid border-1">
                     <th className="border border-blueExtraLight border-solid border-1">
-                      code
+                    {t("code")}
                     </th>
                     <th className="border border-blueExtraLight border-solid border-1">
-                      Country & Company
+                       {t("cc")}
                     </th>
                     {favoritesClicked
                       ? filteredYears.map((year) => (
@@ -328,7 +331,7 @@ interface TableData {
                           </th>
                         ))}
                     <th className="border border-blueExtraLight border-solid border-1">
-                      Total
+                    {t("total")}
                     </th>
                   </tr>
                 </thead>

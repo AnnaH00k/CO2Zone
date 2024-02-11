@@ -1,44 +1,45 @@
 import React from "react";
 import MenuHeader from "../../components/menuHeader";
+import TranslationsProvider from "../../components/TranslationsProvider";
+import initTranslations from "../../i18n";
 
-export default function actionsPage() {
+const i18nNamespaces = ["actionsPage"];
+
+export default async function actionsPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+
   return (
-    <main>
-      <MenuHeader />
+    <TranslationsProvider
+      namespaces={i18nNamespaces}
+      locale={locale}
+      resources={resources}
+    >      
+    <MenuHeader />
 
       <div className=" mt-[5vh] flex flex-col justify-center items-center">
         <h1 className="text-blueExtraLight text-center text-4xl m-4  ">
-          Combating Climate Change: Collective Actions for a Sustainable Future
+           {t("header")}
         </h1>
 
         <div id="ActionIndividuals" className="h-[5vh]" />
 
         <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
-            What can Individuals do?
+             {t("h1")}
           </h1>
           <div className="flex flex-col sm:flex-row items-center sm:items-start">
             <div className="text-blueLight text-lg">
               <ul>
                 <li className="mb-4">
-                  Individual actions play a crucial role in mitigating the
-                  impact of climate change. Simple yet impactful steps include
-                  reducing energy consumption at home, opting for renewable
-                  energy sources, practicing sustainable transportation, such as
-                  biking or using public transport, minimizing water waste, and
-                  adopting eco-friendly habits like recycling and reducing
-                  single-use plastics. Additionally, individuals can advocate
-                  for environmental awareness and support initiatives that
-                  promote sustainability within their communities, fostering a
-                  culture of eco-consciousness and responsible consumption.
+                  {t("t1Li1")}
                 </li>
                 <li className="mb-4">
-                  On this website could be a calculator where individuals can
-                  properly calculate their own co2 emissions, gather points for
-                  planting or acting in a certain way, to reduce co2 emissions,
-                  kind of like a daily co2 emission tracker. Let individuals set
-                  up their own co2 tracker for real time co2 emission data from
-                  their homes.{" "}
+                  {t("t1Li2")}
                 </li>
               </ul>
             </div>
@@ -49,29 +50,16 @@ export default function actionsPage() {
 
         <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
-            What can Companies do?
+             {t("h2")}
           </h1>
           <div className="flex flex-col sm:flex-row items-center sm:items-start">
             <div className="text-blueLight text-lg">
               <ul>
                 <li className="mb-4">
-                  Businesses have a significant responsibility to integrate
-                  sustainable practices into their operations. This can be
-                  achieved by implementing energy-efficient technologies,
-                  optimizing supply chains to reduce emissions, and adopting
-                  eco-friendly manufacturing processes. Companies can also
-                  invest in research and development for clean energy solutions,
-                  promote eco-friendly products, and engage in carbon offset
-                  initiatives. Embracing corporate social responsibility and
-                  incorporating environmental considerations into business
-                  strategies can not only reduce their carbon footprint but also
-                  contribute to building a greener and more sustainable economy.
+                   {t("t2Li1")}
                 </li>
                 <li className="mb-4">
-                  On this website could be a company specific co2 emission
-                  calculator. Tipps for optimising building efficiency and the
-                  introduction to stop greenwashing and share your companys data
-                  as a form of transparency marketing{" "}
+                  {t("t2Li2")}
                 </li>
               </ul>
             </div>
@@ -82,36 +70,22 @@ export default function actionsPage() {
 
         <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
-            What can governments do?
+             {t("h3")}
           </h1>
           <div className="flex flex-col sm:flex-row items-center sm:items-start">
             <div className="text-blueLight text-lg">
               <ul>
                 <li className="mb-4">
-                  Governments play a critical role in setting policies and
-                  regulations that drive environmental protection and
-                  sustainable development. This includes implementing robust
-                  environmental standards, supporting renewable energy
-                  initiatives through incentives and subsidies, promoting green
-                  infrastructure projects, and enforcing regulations to limit
-                  harmful emissions from industries. Moreover, governments can
-                  invest in research and development for green technologies,
-                  prioritize sustainable urban planning, and foster
-                  international collaboration to address global environmental
-                  challenges. By taking proactive measures and fostering a
-                  conducive policy environment, governments can pave the way for
-                  a more sustainable and resilient future for all.
+                   {t("t3Li1")}
                 </li>
                 <li className="mb-4">
-                  Positive regulations and a plattform, where suggestions for
-                  governments can be made. Secure democratic ballet box for
-                  research people want to be supported.
+                  {t("t3Li2")}
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </TranslationsProvider>
   );
 }
