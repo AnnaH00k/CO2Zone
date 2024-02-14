@@ -1,22 +1,22 @@
 "use client";
-import React , { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Menu2 from "./menu2";
 import Menu3 from "./menu3";
 import Menu4 from "./menu4";
-import { MagnifyingGlass } from "@phosphor-icons/react";
+import { MagnifyingGlass, ArrowArcLeft, ArrowArcRight } from "@phosphor-icons/react";
 import { useTranslation } from 'react-i18next';
-
-
 
 export default function MenuHeader() {
     const menuRef = useRef(null);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [totalSearchResults, setTotalSearchResults] = useState(0);
+    const [currentSearchIndex, setCurrentSearchIndex] = useState(0);
 
     const [menu2open, setMenu2Open] = useState(false);
     const [menu3open, setMenu3Open] = useState(false);
     const [menu4open, setMenu4Open] = useState(false);
     const { t } = useTranslation("");
 
-    
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (menuRef.current && !(menuRef.current as any).contains(event.target)) {
@@ -31,7 +31,6 @@ export default function MenuHeader() {
         };
     }, []);
 
-
     useEffect(() => {
         const timer = setTimeout(() => {
             setMenu2Open(false);
@@ -43,47 +42,101 @@ export default function MenuHeader() {
     }, [menu2open, menu3open, menu4open]);
 
 
+    const performSearch = (query: string): any[] => {
+        // Simulate a search operation
+        const searchResults = [
+            { id: 1, title: "Result 1" },
+            { id: 2, title: "Result 2" },
+            { id: 3, title: "Result 3" },
+        ];
+    
+        // Filter search results based on the query
+        const filteredResults = searchResults.filter(result =>
+            result.title.toLowerCase().includes(query.toLowerCase())
+        );
+    
+        return filteredResults;
+    };
+
+    
+
+    const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchQuery(event.target.value);
+    };
+
+    const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Perform search action using searchQuery and update totalSearchResults
+    const results = performSearch(searchQuery); // Perform the actual search action
+    setTotalSearchResults(results.length);
+    setCurrentSearchIndex(0); // Reset current index to first result
+
+    // Mark the first search result if available
+    if (results.length > 0) {
+        markSearchResult(results[0].id);
+    }
+};
+
+const markSearchResult = (id: number) => {
+    // Implement marking logic here, for example:
+    const elementToMark = document.getElementById(`result-${id}`);
+    if (elementToMark) {
+        elementToMark.classList.add('highlighted'); // Add a CSS class to highlight the result
+    }
+};
+
+
+    const handlePreviousResult = () => {
+        setCurrentSearchIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+    };
+
+    const handleNextResult = () => {
+        setCurrentSearchIndex((prevIndex) => Math.min(prevIndex + 1, totalSearchResults - 1));
+    };
+
+    function checkInput() {
+        var query = document.getElementById('search') as HTMLInputElement;
+        if (query !== null) {
+            var value = query.value;
+            (window as any).find(value);
+        }
+        return true;
+    }
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            checkInput();
+        }
+    };
+
     return (
         <header>
             <nav >
                 <div ref={menuRef} className='flex flex-col items-center'>
-                <div className='flex flex-row items-start sm:fixed top-0 left-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl border border-blueDark border-solid border-1 m-[1vh] text-blueExtraLight z-10'>
-                   
-                    <a className='text-blueExtraLight no-underline text-sm md:text-lg sm:text-md w-auto my-[1vh] mx-[1vw]' onMouseEnter={() => {setMenu2Open(false); setMenu3Open(false); setMenu4Open(false)}} href='/'> {t("menuOverview")}</a>
-                   
-                    <div className='flex flex-col items-start top-0 left-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl text-blueExtraLight z-10' 
-                         onMouseEnter={() => {setMenu2Open(true); setMenu3Open(false); setMenu4Open(false)}}
-                         onMouseLeave={() => setMenu2Open(true)}>
-                    <a className='text-blueExtraLight no-underline text-sm md:text-lg sm:text-md w-auto my-[1vh] mx-[1vw]' onClick={() => setMenu2Open(true)} > {t("menuCO2Infos")}</a>
-                    </div>
-
-                    <div className='flex flex-col items-start top-0 left-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl text-blueExtraLight z-10' 
-                         onMouseEnter={() => {setMenu2Open(false); setMenu3Open(true); setMenu4Open(false)}}
-                         onMouseLeave={() => setMenu3Open(true)}>
+                    <div className='flex flex-row items-start sm:fixed top-0 left-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl border border-blueDark border-solid border-1 m-[1vh] text-blueExtraLight z-10'>
+                        <a className='text-blueExtraLight no-underline text-sm md:text-lg sm:text-md w-auto my-[1vh] mx-[1vw]' onMouseEnter={() => { setMenu2Open(false); setMenu3Open(false); setMenu4Open(false) }} href='/'> {t("menuOverview")}</a>
+                        <div className='flex flex-col items-start top-0 left-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl text-blueExtraLight z-10' onMouseEnter={() => { setMenu2Open(true); setMenu3Open(false); setMenu4Open(false) }} onMouseLeave={() => setMenu2Open(true)}>
+                            <a className='text-blueExtraLight no-underline text-sm md:text-lg sm:text-md w-auto my-[1vh] mx-[1vw]' onClick={() => setMenu2Open(true)} > {t("menuCO2Infos")}</a>
+                        </div>
+                        <div className='flex flex-col items-start top-0 left-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl text-blueExtraLight z-10' onMouseEnter={() => { setMenu2Open(false); setMenu3Open(true); setMenu4Open(false) }} onMouseLeave={() => setMenu3Open(true)}>
                             <a className='text-blueExtraLight no-underline text-sm md:text-lg sm:text-md w-auto my-[1vh] mx-[1vw]' onClick={() => setMenu3Open(true)}> {t("menuActions")}</a>
-                    </div>
-
-                    <div className='flex flex-col items-start top-0 left-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl text-blueExtraLight z-10' 
-                         onMouseEnter={() => {setMenu2Open(false); setMenu3Open(false); setMenu4Open(true)}}
-                         onMouseLeave={() => setMenu4Open(true)}>                    
+                        </div>
+                        <div className='flex flex-col items-start top-0 left-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl text-blueExtraLight z-10' onMouseEnter={() => { setMenu2Open(false); setMenu3Open(false); setMenu4Open(true) }} onMouseLeave={() => setMenu4Open(true)}>
                             <a className='text-blueExtraLight no-underline text-sm md:text-lg sm:text-md w-auto my-[1vh] mx-[1vw]' onClick={() => setMenu4Open(true)}>{t("menuInteresting")}</a>
+                        </div>
                     </div>
-
-                    </div>
-
-
-
-
                     <div className='flex flex-col sm:flex-row sm:items-start items-center sm:fixed top-0 left-0 sm:mt-[6vh]'>
-                    {menu2open && <Menu2/>}
-                    {menu3open && <Menu3/>}
-                    {menu4open && <Menu4/>}
+                        {menu2open && <Menu2 />}
+                        {menu3open && <Menu3 />}
+                        {menu4open && <Menu4 />}
                     </div>
-
-                <div id="menuSearch">
-                    <form className='flex flex-row items-center sm:fixed top-0 right-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] pt-[1vh] pb-[1vh] rounded-3xl border border-blueDark border-1 m-[1vh] text-blueExtraLight text-sm md:text-lg sm:text-md z-10' >
-                        <input className='bg-blueExtraDark ' type="search" name="suche" placeholder="Search" />
-                        <button className='' type="submit" title="Search"><MagnifyingGlass size={25} /></button>
+                    <div className="search_box">
+                    <form action="" id="form2" className='flex flex-row items-center sm:fixed top-0 right-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] pt-[1vh] pb-[1vh] rounded-3xl border border-blueDark border-1 m-[1vh] text-blueExtraLight text-sm md:text-lg sm:text-md z-10' onSubmit={handleSearchSubmit}>
+                        <input className='bg-blueExtraDark ' type="text" id="search" name="suche" placeholder="Search" value={searchQuery} onChange={handleSearchInputChange} />
+                        <button type="submit" id="submit_form" title="Search"><MagnifyingGlass size={25} /></button>
+                        <span>{currentSearchIndex + 1} / {totalSearchResults}</span>
+                        <button type="button" onClick={handlePreviousResult} disabled={currentSearchIndex === 0}><ArrowArcLeft size={20} /></button>
+                        <button type="button" onClick={handleNextResult} disabled={currentSearchIndex === totalSearchResults - 1}><ArrowArcRight size={20} /></button>
                     </form>
                     
                 </div>

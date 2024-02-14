@@ -5,6 +5,7 @@ import ClientComponent from "../components/ClientComponent";
 import LanguageChanger from "../components/LanguageChanger";
 import TranslationsProvider from "../components/TranslationsProvider";
 import initTranslations from "../i18n";
+import SearchBar from "../components/searchbar";
 
 const i18nNamespaces = ["home"];
 
@@ -19,6 +20,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
       resources={resources}
     >
       <MenuHeader />
+
       <main>
         <div className=" mt-[5vh] flex flex-col justify-center items-center">
           <div className="w-[40vw]">
@@ -31,6 +33,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
         </div>
 
         <ClientComponent />
+
 
         <h1 className="text-blueExtraLight text-3xl text-center mt-5">
          {t("measuringUnitHeader")}
