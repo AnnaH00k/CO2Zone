@@ -3,14 +3,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import Menu2 from "./menu2";
 import Menu3 from "./menu3";
 import Menu4 from "./menu4";
-import { MagnifyingGlass, ArrowArcLeft, ArrowArcRight } from "@phosphor-icons/react";
+import { ArrowArcRight, MagnifyingGlass } from "@phosphor-icons/react";
 import { useTranslation } from 'react-i18next';
 
 export default function MenuHeader() {
     const menuRef = useRef(null);
     const [searchQuery, setSearchQuery] = useState('');
-    const [totalSearchResults, setTotalSearchResults] = useState(0);
-    const [currentSearchIndex, setCurrentSearchIndex] = useState(0);
+    const [searchResultCount, setSearchResultCount] = useState(0); // State variable for search result count
+
 
     const [menu2open, setMenu2Open] = useState(false);
     const [menu3open, setMenu3Open] = useState(false);
@@ -41,58 +41,24 @@ export default function MenuHeader() {
         return () => clearTimeout(timer);
     }, [menu2open, menu3open, menu4open]);
 
-
-    const performSearch = (query: string): any[] => {
-        // Simulate a search operation
-        const searchResults = [
-            { id: 1, title: "Result 1" },
-            { id: 2, title: "Result 2" },
-            { id: 3, title: "Result 3" },
-        ];
-    
-        // Filter search results based on the query
-        const filteredResults = searchResults.filter(result =>
-            result.title.toLowerCase().includes(query.toLowerCase())
-        );
-    
-        return filteredResults;
-    };
-
-    
-
     const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(event.target.value);
     };
 
-    const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Perform search action using searchQuery and update totalSearchResults
-    const results = performSearch(searchQuery); // Perform the actual search action
-    setTotalSearchResults(results.length);
-    setCurrentSearchIndex(0); // Reset current index to first result
-
-    // Mark the first search result if available
-    if (results.length > 0) {
-        markSearchResult(results[0].id);
-    }
-};
-
-const markSearchResult = (id: number) => {
-    // Implement marking logic here, for example:
-    const elementToMark = document.getElementById(`result-${id}`);
-    if (elementToMark) {
-        elementToMark.classList.add('highlighted'); // Add a CSS class to highlight the result
-    }
-};
-
-
-    const handlePreviousResult = () => {
-        setCurrentSearchIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+    const handleSearchSubmit =(event: React.FormEvent<HTMLInputElement>) => {
+        event.preventDefault();
+        console.log('Search Query:', searchQuery);
     };
 
-    const handleNextResult = () => {
-        setCurrentSearchIndex((prevIndex) => Math.min(prevIndex + 1, totalSearchResults - 1));
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>)  => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            checkInput();
+        }
     };
+
+    
+
 
     function checkInput() {
         var query = document.getElementById('search') as HTMLInputElement;
@@ -103,11 +69,6 @@ const markSearchResult = (id: number) => {
         return true;
     }
 
-    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') {
-            checkInput();
-        }
-    };
 
     return (
         <header>
@@ -131,15 +92,12 @@ const markSearchResult = (id: number) => {
                         {menu4open && <Menu4 />}
                     </div>
                     <div className="search_box">
-                    <form action="" id="form2" className='flex flex-row items-center sm:fixed top-0 right-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] pt-[1vh] pb-[1vh] rounded-3xl border border-blueDark border-1 m-[1vh] text-blueExtraLight text-sm md:text-lg sm:text-md z-10' onSubmit={handleSearchSubmit}>
-                        <input className='bg-blueExtraDark ' type="text" id="search" name="suche" placeholder="Search" value={searchQuery} onChange={handleSearchInputChange} />
-                        <button type="submit" id="submit_form" title="Search"><MagnifyingGlass size={25} /></button>
-                        <span>{currentSearchIndex + 1} / {totalSearchResults}</span>
-                        <button type="button" onClick={handlePreviousResult} disabled={currentSearchIndex === 0}><ArrowArcLeft size={20} /></button>
-                        <button type="button" onClick={handleNextResult} disabled={currentSearchIndex === totalSearchResults - 1}><ArrowArcRight size={20} /></button>
-                    </form>
-                    
-                </div>
+                        <form action="" id="form2" className='flex flex-row items-center sm:fixed top-0 right-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] pt-[1vh] pb-[1vh] rounded-3xl border border-blueDark border-1 m-[1vh] text-blueExtraLight text-sm md:text-lg sm:text-md z-10' >
+                            <input className='bg-blueExtraDark ' type="text" id="search" name="suche" placeholder="Search" onKeyDown={handleKeyDown} />
+                            <button type="button" id="submit_form" onClick={checkInput} title="Search"><MagnifyingGlass size={25} /></button>
+
+                        </form>
+                    </div>
                 </div>
             </nav>
         </header>
