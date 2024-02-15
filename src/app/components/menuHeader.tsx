@@ -49,12 +49,24 @@ export default function MenuHeader() {
 
     function checkInput() {
         var query = document.getElementById('search') as HTMLInputElement;
-        if (query !== null) {
+        var regex = /^[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=<>]+$/;
+    
+        if (query === null || query.value === "" || query.value === undefined) {
+            alert("Please enter a search term");
+            return false;
+        }
+        else if (!regex.test(query.value)) {
+            alert("Special characters are not allowed due to risk of code injection");
+            return false;
+        }
+        else {
             var value = query.value;
             (window as any).find(value);
         }
+    
         return true;
     }
+    
 
 
     return (
@@ -82,7 +94,6 @@ export default function MenuHeader() {
                         <form action="" id="form2" className='flex flex-row items-center sm:fixed top-0 right-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] pt-[1vh] pb-[1vh] rounded-3xl border border-blueDark border-1 m-[1vh] text-blueExtraLight text-sm md:text-lg sm:text-md z-10' >
                             <input className='bg-blueExtraDark ' type="text" id="search" name="suche" placeholder="Search" onKeyDown={handleKeyDown} />
                             <button type="button" id="submit_form" onClick={checkInput} title="Search"><MagnifyingGlass size={25} /></button>
-
                         </form>
                     </div>
                 </div>
