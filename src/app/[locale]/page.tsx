@@ -5,7 +5,6 @@ import ClientComponent from "../components/ClientComponent";
 import LanguageChanger from "../components/LanguageChanger";
 import TranslationsProvider from "../components/TranslationsProvider";
 import initTranslations from "../i18n";
-import SearchBar from "../components/searchbar";
 
 const i18nNamespaces = ["home"];
 

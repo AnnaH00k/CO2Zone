@@ -21,8 +21,9 @@ interface TableData {
   company?: string;
 }
 
-  const { t } = useTranslation("");
-  
+const { t, i18n } = useTranslation("");
+const [isRTL, setIsRTL] = useState(false); // State to track text direction
+
   const [tableData, setTableData] = useState<TableData[]>([]);
   const [showCompanies, setShowCompanies] = useState<string>("true");
   const [sortOrder, setSortOrder] = useState<"oldToNew" | "newToOld">(
@@ -33,6 +34,15 @@ interface TableData {
   const [selectedYears, setSelectedYears] = useState<string[]>([]);
   const [favoritesClicked, setFavoritesClicked] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+
+
+  useEffect(() => {
+    // Check if the current language is right-to-left
+    const currentLang = i18n.language || window.navigator.language;
+    setIsRTL(["ar", "he"].includes(currentLang)); // Add other RTL languages as needed
+}, [i18n.language]);
+
+
 
   useEffect(() => {
     const formattedData: TableData[] = jsonData.table.map((item: any) => ({
@@ -60,8 +70,12 @@ interface TableData {
       container.scrollLeft = newPosition;
       setScrollPosition(newPosition);
     }
-    if (scrollPosition <= 0) {
+  
+    if (scrollPosition <= 0 && !isRTL) {
       setScrollPosition(0);
+    }
+    if (scrollPosition <= -2200 && isRTL) {
+      setScrollPosition(-2200);
     }
   };
 
@@ -73,8 +87,12 @@ interface TableData {
       container.scrollLeft = newPosition;
       setScrollPosition(newPosition);
     }
-    if (scrollPosition >= 2200) {
+   
+    if (scrollPosition >= 2200 && !isRTL) {
       setScrollPosition(2200);
+    }
+    if (scrollPosition >= 0 && isRTL) {
+      setScrollPosition(0);
     }
   };
 
@@ -253,13 +271,15 @@ interface TableData {
             </div>
 
             {/* Add buttons for scrolling */}
-            <div className="flex bg-blueExtraLight justify-center justify-between  ">
+            <div className={`flex bg-blueExtraLight justify-center justify-between ${isRTL? 'flex-row-reverse':'flex-row'} `}>
               <button
                 className={`flex rounded-full justify-center items-center border border-blueExtraDark p-1 m-1 gap-1 text-xs sm:text-lg ${
-                  scrollPosition <= 0
+                  scrollPosition <= 0 && !isRTL
                     ? "bg-grey text-blueLight border-blueLight block"
-                    : "bg-blueLight"
-                }`}
+                    : ""
+                } ${scrollPosition <= -2200 && isRTL 
+                  ? "bg-grey text-blueLight border-blueLight block"
+                  : ""}`}
                 onClick={scrollLeft}
               >
                 {" "}
@@ -268,10 +288,12 @@ interface TableData {
               </button>
               <button
                 className={`flex rounded-full justify-center items-center border border-blueExtraDark p-1 m-1 gap-1 text-xs sm:text-lg ${
-                  scrollPosition >= 2200
+                  scrollPosition >= 2200 &&!isRTL
                     ? "bg-grey text-blueLight border-blueLight block"
-                    : "bg-blueLight"
-                }`}
+                    : ""
+                } ${scrollPosition >= 0 && isRTL
+                  ? "bg-grey text-blueLight border-blueLight block"
+                  : ""}`}
                 onClick={scrollRight}
                 >
                 {" "}
