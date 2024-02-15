@@ -82,7 +82,7 @@ export default function MenuHeader() {
     return (
         <header>
             <nav >
-                <div ref={menuRef} className='flex flex-col items-center'>
+                <div ref={menuRef} className='flex z-100 flex-col items-center'>
                     <div className={`flex flex-row items-start sm:fixed top-0  ${isRTL ? 'right-0' : 'left-0'} w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl border border-blueDark border-solid border-1 m-[1vh] text-blueExtraLight z-10`}>
                         <a className='text-blueExtraLight no-underline text-sm md:text-lg sm:text-md w-auto my-[1vh] mx-[1vw]' onMouseEnter={() => { setMenu2Open(false); setMenu3Open(false); setMenu4Open(false) }} href='/'> {t("menuOverview")}</a>
                         <div className='flex flex-col items-start top-0 left-0 w-auto h-auto bg-blueExtraDark pl-[1vw] pr-[1vw] rounded-3xl text-blueExtraLight z-10' onMouseEnter={() => { setMenu2Open(true); setMenu3Open(false); setMenu4Open(false) }} onMouseLeave={() => setMenu2Open(true)}>
@@ -95,7 +95,7 @@ export default function MenuHeader() {
                             <a className='text-blueExtraLight no-underline text-sm md:text-lg sm:text-md w-auto my-[1vh] mx-[1vw]' onClick={() => setMenu4Open(true)}>{t("menuInteresting")}</a>
                         </div>
                     </div>
-                    <div className={`flex flex-col sm:flex-row sm:items-start items-center sm:fixed top-0 ${isRTL ? 'right-0': 'left-0'} sm:mt-[6vh]`}>
+                    <div className={`flex flex-col sm:flex-row sm:items-start items-center sm:fixed top-0 ${isRTL ? 'right-0': 'left-0'} sm:mt-[6vh] z-100`}>
                         {menu2open && <Menu2 />}
                         {menu3open && <Menu3 />}
                         {menu4open && <Menu4 />}

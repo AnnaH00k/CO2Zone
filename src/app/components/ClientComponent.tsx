@@ -310,11 +310,10 @@ const [isRTL, setIsRTL] = useState(false); // State to track text direction
                 scrollbarColor: "blueExtraLight blueDark",
                 scrollBehavior: "smooth",
                 scrollbarWidth: "thin",
-                position: "relative",
                 zIndex: 1,
               }}
             >
-              <table className="bg-blueLight w-[90vw] sm:w-[80vw] text-blueExtraDark text-left text-sm sm:text-xl mb-4">
+              <table className="bg-blueLight w-[90vw] sm:w-[80vw] text-blueExtraDark text-left text-sm sm:text-xl mb-4 z-1">
                 <thead>
                   <tr className="border border-blueExtraLight border-solid border-1">
                     <th className="border border-blueExtraLight border-solid border-1">
@@ -357,7 +356,7 @@ const [isRTL, setIsRTL] = useState(false); // State to track text direction
                     </th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="z-0">
                   {tableData.map((item: TableData, index: number) => (
                     <tr
                       key={index}
