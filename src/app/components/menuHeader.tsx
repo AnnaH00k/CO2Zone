@@ -8,8 +8,6 @@ import { useTranslation } from 'react-i18next';
 
 export default function MenuHeader() {
     const menuRef = useRef(null);
-    const [searchQuery, setSearchQuery] = useState('');
-    const [searchResultCount, setSearchResultCount] = useState(0); // State variable for search result count
 
 
     const [menu2open, setMenu2Open] = useState(false);
@@ -41,14 +39,6 @@ export default function MenuHeader() {
         return () => clearTimeout(timer);
     }, [menu2open, menu3open, menu4open]);
 
-    const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchQuery(event.target.value);
-    };
-
-    const handleSearchSubmit =(event: React.FormEvent<HTMLInputElement>) => {
-        event.preventDefault();
-        console.log('Search Query:', searchQuery);
-    };
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>)  => {
         if (event.key === 'Enter') {
@@ -56,9 +46,6 @@ export default function MenuHeader() {
             checkInput();
         }
     };
-
-    
-
 
     function checkInput() {
         var query = document.getElementById('search') as HTMLInputElement;
