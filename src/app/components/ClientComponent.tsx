@@ -5,10 +5,11 @@ import jsonData from "../Data/table.json";
 import Footer from "../components/footer";
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'react-i18next';
-import { ArrowArcLeft } from "@phosphor-icons/react/dist/ssr";
+import { ArrowArcLeft, Info } from "@phosphor-icons/react/dist/ssr";
 import { ArrowArcRight } from "@phosphor-icons/react";
 import TranslationsProvider from "../components/TranslationsProvider";
 import initTranslations from "../i18n";
+import { time } from "console";
 
 
 const ClientComponent = () => {
@@ -202,15 +203,48 @@ const [isRTL, setIsRTL] = useState(false); // State to track text direction
   const filteredYears = sortedYears.filter((year) =>
     selectedYears.includes(year)
   );
+  const [isExplanationOpen, setIsExplanationOpen] = useState(false);
 
-
+  const toggleExplanation = () => {
+    setIsExplanationOpen((prev) => !prev);
+    setTimeout(() => {
+      setIsExplanationOpen(false);
+    }, 10000);
+  };
 
   return (
     <div className="justify-center align-center flex items-center w-[100vw] mt-[3vh]">
           <section className="mt-4 w-[90vw] sm:w-[80vw]">
-            <h2 className="text-lg sm:text-4xl align-center flex justify-center p-3 text-center text-blueDark bg-blueExtraLight">
-              {t("tableHeadline")}
-            </h2>
+            <div className="flex bg-blueExtraLight justify-end items-center">
+              <h2 className="text-lg sm:text-4xl align-center flex justify-center w-full p-3 text-center text-blueDark bg-blueExtraLight">
+                {t("tableHeadline")}
+              </h2>
+
+              <Info size={24} onClick={toggleExplanation} className="m-3 text-blueExtraDark absolute" />
+              {isExplanationOpen && (
+                <div id="info" className="p-4 max-w-[500px] absolute bg-gray-200 text-gray-800 mt-2">
+                <button className="absolute top-1 right-1 text-gray-500 hover:text-gray-700" onClick={() => setIsExplanationOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <li>
+                  {t("explanation1")}
+                </li>
+                <li>
+                  {t("explanation2")}
+                </li>
+                <li>
+                  {t("explanation3")}
+                </li>
+                <li>
+                  {t("explanation4")}
+                </li>
+              </div>
+              
+              )}
+
+            </div>
 
             <div className="flex sm:flex-row flex-col justify-center bg-blueDark border border-blueExtraLight border-solid border-1 items-center">
               <div>
@@ -427,3 +461,11 @@ const [isRTL, setIsRTL] = useState(false); // State to track text direction
 };
 
 export default ClientComponent;
+function timeOut() {
+  throw new Error("Function not implemented.");
+}
+
+function setIsExplanationOpen(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
+
