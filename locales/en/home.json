@@ -46,5 +46,8 @@
 "explanation1":"Tap any year or country to mark it as selected. Tap again to unselect.",
 "explanation2":" Tap the Set Favorites button to filter the table to only show selected years, countries, and companies. ",
 "explanation3":"Reload the page to reset the table.",
-"explanation4":" Use arrows or mouse scrolling to navigate the table."
+"explanation4":" Use arrows or mouse scrolling to navigate the table.",
+"Datasecurity":"Datasecurity",
+"Imprint":"Imprint",
+"Contact":"Contact"
 }
