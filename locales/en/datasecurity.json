@@ -18,5 +18,25 @@
     "menuOverview":"Overview",
     "Datasecurity":"Datasecurity",
     "Imprint":"Legal Information",
-    "Contact":"Contact"
+    "Contact":"Contact",
+
+    "header":"Datasecurity",
+    "subheader":"Thank you for your interest in our website. We take data security seriously, even though we do not save any personal data. Below are details about the security measures we have implemented:",
+    "l1s":"Encryption Methods:",
+    "l1":"While we do not collect personal data, any communication between your browser and our website is encrypted using HTTPS to ensure data integrity and security.",
+    "l2s":"Access Controls:",
+    "l2":"Our website does not require user authentication or access controls as we do not store any personal data.",
+    "l3s":"Secure Data Storage:",
+    "l3":"We do not save any personal data on our servers. Therefore, there are no data storage concerns.",
+    "l4s":"Regular Security Audits:",
+    "l4":"Although we do not store personal data, we conduct regular security checks and updates to ensure the overall safety and integrity of our website.",
+    "l5s":"Compliance with Regulations:",
+    "l5":"While we are not subject to specific data protection regulations due to our non-collection of personal data, we are committed to adhering to best practices for online security.",
+    "l6s":"Incident Response Plan:",
+    "l6":" In the unlikely event of a security breach, we have procedures in place to investigate and rectify the issue promptly. However, since we do not store personal data, the impact of such incidents is minimal.",
+    "l7s":"User Consent and Rights:",
+    "l7":" As we do not collect personal data, there are no mechanisms for user consent or rights regarding data privacy.",
+    "l8s":"Additional Information:",
+    "l8":"We want to reassure our users that their privacy and security are of utmost importance to us. Even though we do not collect personal data, we remain vigilant in maintaining a secure online environment.",
+    "questions":"If you have any questions or concerns about data security or privacy, please don't hesitate to contact us."
     }

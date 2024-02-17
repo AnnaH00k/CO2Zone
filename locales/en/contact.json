@@ -18,5 +18,23 @@
     "menuOverview":"Overview",
     "Datasecurity":"Datasecurity",
     "Imprint":"Legal Information",
-    "Contact":"Contact"
+    "Contact":"Contact",
+
+    "header":"Contact us",
+    "text1":"If you have any questions, suggestions, or feedback, please feel free to contact us using the information below. We'd love to hear from you!",
+    "adress":"Adress",
+    "companyName":"CO2zone GmbH",
+    "street":"Street Address",
+    "city":"City, Postal Code",
+    "country":"Country",
+    "phoneheader":"Phone",
+    "phonenumber":"+123456789",
+    "emailheader":"Email",
+    "mail":"info@co2zone.com",
+    "mediaHeader":"Social Media",
+    "mediaInvite":"Connect with us on social media platforms:",
+    "twitterHeader":"Twitter:",
+    "facebookHeader":"Facebook:",
+    "instaHeader":"Instagram:",
+    "responseTime":" We typically respond to inquiries within 24-48 hours. Thank you for reaching out!"
     }

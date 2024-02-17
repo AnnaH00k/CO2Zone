@@ -25,47 +25,45 @@ export default async function contactPage({
     >
       <MenuHeader />
       <div className=" mt-[5vh] flex flex-col justify-center items-center">
-        <h1 className="text-blueExtraLight text-4xl  m-4   ">Contact us</h1>
+        <h1 className="text-blueExtraLight text-4xl  m-4   ">{t("header")}</h1>
       </div>
       <div className="text-blueExtraLight container mx-auto px-4">
         <p className="text-lg mb-4">
-          If you have any questions, suggestions, or feedback, please feel free
-          to contact us using the information below. We'd love to hear from you!
+        {t("text1")}
         </p>
         <div className="mb-4">
-          <h3 className="text-xl font-bold mb-2">Address</h3>
+          <h3 className="text-xl font-bold mb-2"> {t("adress")}</h3>
           <p>
-            CO2zone GmbH <br /> Street Address <br /> City, Postal Code <br />{" "}
-            Country
+          {t("companyName")}  <br />{t("street")}  <br /> {t("city")}  <br />{" "}
+          {t("country")} 
           </p>
         </div>
         <div className="mb-4">
-          <h3 className="text-xl font-bold mb-2">Phone</h3>
-          <p>+123456789</p>
+          <h3 className="text-xl font-bold mb-2">{t("phoneheader")}</h3>
+          <p> {t("phonenumber")}</p>
         </div>
         <div className="mb-4">
-          <h3 className="text-xl font-bold mb-2">Email</h3>
-          <p>info@co2zone.com</p>
+          <h3 className="text-xl font-bold mb-2">{t("emailheader")}</h3>
+          <p> {t("mail")}</p>
         </div>
         <div className="mb-4">
-          <h3 className="text-xl font-bold mb-2">Social Media</h3>
-          <p>Connect with us on social media platforms:</p>
+          <h3 className="text-xl font-bold mb-2">{t("mediaHeader")}</h3>
+          <p>{t("mediaInvite")}</p>
           <ul className="list-disc list-inside">
             <li>
-              Twitter: <a href="https://twitter.com/co2zone">@co2zone</a>
+              {t("twitterHeader")} <a href="https://twitter.com/co2zone" >@co2zone</a>
             </li>
             <li>
-              Facebook: <a href="https://www.facebook.com/co2zone">CO2zone</a>
+              {t("facebookHeader")} <a href="https://www.facebook.com/co2zone">CO2zone</a>
             </li>
             <li>
-              Instagram:{" "}
+             {t("instaHeader")}
               <a href="https://www.instagram.com/co2zone">@co2zone</a>
             </li>
           </ul>
         </div>
         <p className="text-lg mb-4">
-          We typically respond to inquiries within 24-48 hours. Thank you for
-          reaching out!
+          {t("responseTime")}
         </p>
       </div>
       <Footer />

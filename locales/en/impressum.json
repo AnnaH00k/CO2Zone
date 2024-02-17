@@ -18,5 +18,26 @@
     "menuOverview":"Overview",
     "Datasecurity":"Datasecurity",
     "Imprint":"Legal Information",
-    "Contact":"Contact"
+    "Contact":"Contact",
+
+    "header":"Legal Information",
+    "subheader":"Information according to § 5 TMG",
+    "company":"CO2zone GmbH",
+    "street":"Street Address",
+    "city":"City, Postal Code",
+    "country":"Country",
+    "represented":"Represented by",
+    "director":"John Doe (Managing Director)",
+    "contactheader":"Contact Information",
+    "phone":"Phone: +123456789",
+    "email":" Email: info@co2zone.com",
+    "registerheader":"Register entry",
+    "register1":"Registered in the Commercial Register.",
+    "register2":" Register court: [Court Name] ",
+    "register3":"Registration number: [Registration Number]",
+    "vatid":"VAT ID",
+    "vat1":"VAT identification number according to §27a of the German Value Added Tax Act:",
+    "vat2":"[VAT ID Number]",
+    "disclaimerheader":"Disclaimer",
+    "disclaimertext":"  The information contained in this website is for general information purposes only. The information is provided by CO2zone GmbH and while we endeavor to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk."
     }
