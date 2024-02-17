@@ -22,7 +22,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
       <main>
         <div className=" mt-[5vh] flex flex-col justify-center items-center">
-          <div className="w-[40vw]">
+          <div className="w-[40vw] max-w-[500px]">
             <img src="/CO2zoneLogo.png" alt="logo" width="100%" />
           </div>
           <h1 className="flex hyphens-auto text-center text-blueExtraLight text-lg sm:text-4xl m-4 ">

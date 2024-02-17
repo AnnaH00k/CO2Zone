@@ -28,7 +28,7 @@ export default async function interestingPage({
 
         <div id="CooperationOnClimateChange" className="h-[5vh]" />
 
-        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex m-5 flex-col items-center justify-center sm:w-[80vw] w-[95vw]  p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
             {t("h1")}
           </h1>
@@ -43,7 +43,7 @@ export default async function interestingPage({
 
         <div id="EmissionTradingSchemes" className="h-[5vh]" />
 
-        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex m-5 flex-col items-center justify-center  sm:w-[80vw] w-[95vw]  p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
              {t("h2")}
           </h1>
@@ -60,7 +60,7 @@ export default async function interestingPage({
 
         <div id="Geoengineering" className="h-[5vh]" />
 
-        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex m-5 flex-col items-center justify-center  sm:w-[80vw] w-[95vw]  p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
             {t("h3")}
           </h1>
@@ -76,7 +76,7 @@ export default async function interestingPage({
         </div>
 
         <div id="ClimateChangeDenial" className="h-[5vh]" />
-        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex m-5 flex-col items-center justify-center  sm:w-[80vw] w-[95vw]  p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
              {t("h4")}
           </h1>

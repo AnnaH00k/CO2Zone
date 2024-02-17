@@ -30,7 +30,7 @@ export default async function co2InfoPage({
           {t("header")}
         </h1>
 
-        <div className="flex flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex flex-col items-center justify-center  sm:w-[80vw] w-[95vw]  p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-2xl mb-4 font-bold">
             {t("h1")}
           </h1>
@@ -54,7 +54,7 @@ export default async function co2InfoPage({
           </div>
         </div>
         <div id="WhatDoesCo2Do" className="h-[5vh]" />
-        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex m-5 flex-col items-center justify-center  sm:w-[80vw] w-[95vw]  p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
             {t("h2")}
           </h1>
@@ -131,7 +131,7 @@ export default async function co2InfoPage({
         </div>
         <div id="HowIsItMonitored" className="h-[5vh]" />
 
-        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex m-5 flex-col items-center justify-center  sm:w-[80vw] w-[95vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
              {t("h3")}
           </h1>
@@ -231,7 +231,7 @@ export default async function co2InfoPage({
 
         <div id="CurrentResearch" className="h-[5vh]" />
 
-        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex m-5 flex-col items-center justify-center  sm:w-[80vw] w-[95vw]  p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
              {t("h4")}
           </h1>
@@ -247,7 +247,7 @@ export default async function co2InfoPage({
         </div>
 
         <div id="OtherInfluences" className="h-[5vh]" />
-        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex m-5 flex-col items-center justify-center sm:w-[80vw] w-[95vw]  p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
              {t("h5")}
           </h1>
@@ -264,7 +264,7 @@ export default async function co2InfoPage({
         </div>
 
         <div id="CO2Equivalents" className="h-[5vh]" />
-        <div className="flex m-5 flex-col items-center justify-center w-[80vw] p-8 bg-blueExtraDark rounded-lg">
+        <div className="flex m-5 flex-col items-center justify-center  sm:w-[80vw] w-[95vw] p-8 bg-blueExtraDark rounded-lg">
           <h1 className="text-blueExtraLight text-3xl mb-4 font-bold">
              {t("h6")}
           </h1>
