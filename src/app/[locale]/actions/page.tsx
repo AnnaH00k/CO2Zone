@@ -2,6 +2,7 @@ import React from "react";
 import MenuHeader from "../../components/menuHeader";
 import TranslationsProvider from "../../components/TranslationsProvider";
 import initTranslations from "../../i18n";
+import Footer from "../../components/footer";
 
 const i18nNamespaces = ["actionsPage"];
 
@@ -86,6 +87,7 @@ export default async function actionsPage({
           </div>
         </div>
       </div>
+      <Footer />
     </TranslationsProvider>
   );
 }

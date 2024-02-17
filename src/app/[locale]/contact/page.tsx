@@ -25,10 +25,9 @@ export default async function contactPage({
     >
       <MenuHeader />
       <div className=" mt-[5vh] flex flex-col justify-center items-center">
-        <h1 className="text-blueExtraLight text-4xl  m-4  ">Contact</h1>
+        <h1 className="text-blueExtraLight text-4xl  m-4   ">Contact us</h1>
       </div>
       <div className="text-blueExtraLight container mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
         <p className="text-lg mb-4">
           If you have any questions, suggestions, or feedback, please feel free
           to contact us using the information below. We'd love to hear from you!

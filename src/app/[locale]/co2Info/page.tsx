@@ -2,6 +2,7 @@ import React from "react";
 import MenuHeader from "../../components/menuHeader";
 import TranslationsProvider from "../../components/TranslationsProvider";
 import initTranslations from "../../i18n";
+import Footer from "../../components/footer";
 
 const i18nNamespaces = ["co2InfoPage"];
 
@@ -278,6 +279,7 @@ export default async function co2InfoPage({
           </div>
         </div>
       </div>
+      <Footer />
     </TranslationsProvider>
   );
 }
